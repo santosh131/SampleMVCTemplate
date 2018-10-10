@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@if(!string.IsNullOrEmpty(ViewBag.ErrorText))
+{
+    <div class="alert-danger">
+        @ViewBag.ErrorText
+    </div>
+}
+

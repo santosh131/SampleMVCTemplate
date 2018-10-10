@@ -1,0 +1,5 @@
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\Helpers\bin\Debug\Helpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\Helpers\bin\Debug\Helpers.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\Helpers\obj\Debug\Helpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\Helpers\obj\Debug\Helpers.pdb

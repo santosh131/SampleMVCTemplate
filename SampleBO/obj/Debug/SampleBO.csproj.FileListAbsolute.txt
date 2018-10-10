@@ -1,0 +1,13 @@
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleBO.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleBO.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\Helpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleModels.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\Helpers.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleModels.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\obj\Debug\SampleBO.csprojResolveAssemblyReference.cache
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\obj\Debug\SampleBO.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\obj\Debug\SampleBO.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleDAL.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleHelpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleDAL.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleBO\bin\Debug\SampleHelpers.pdb

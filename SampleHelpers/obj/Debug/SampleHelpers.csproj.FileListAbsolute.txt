@@ -1,0 +1,7 @@
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.pdb
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojResolveAssemblyReference.cache
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
+C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb

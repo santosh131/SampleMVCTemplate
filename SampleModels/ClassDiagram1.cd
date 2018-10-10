@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SampleModels.MenuActions">
+    <Position X="3.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAABAQAAAAEAAAQAAA=</HashCode>
+      <FileName>MenuActions.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserRoleMenuAction" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SampleModels.Menus">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAABAAQQEAAAAAAQAA=</HashCode>
+      <FileName>Menus.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MenuActions" />
+      <Property Name="RoleMenus" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SampleModels.RoleMenuAction">
+    <Position X="6.5" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>RoleMenuAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleModels.RoleMenus">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQJAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleMenus.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RoleMenuAction" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SampleModels.Roles">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAQAA=</HashCode>
+      <FileName>Roles.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserRoles" />
+      <Property Name="RoleMenus" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SampleModels.UserRoleMenuAction">
+    <Position X="6.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAgA=</HashCode>
+      <FileName>UserRoleMenuAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleModels.UserRoles">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>UserRoles.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserRoleMenuAction" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SampleModels.Users">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAgAAAAAAAgCCRAAAAAAAAA=</HashCode>
+      <FileName>Users.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserRoles" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

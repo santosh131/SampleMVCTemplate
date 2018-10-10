@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNet.Identity
+@using SampleModels
+@using SampleMVCTemplate.Infrastructure
+
+@{
+    List<Menus> menus =(User as CustomPrincipal).Menus;
+
+}
+@foreach (var item in menus)
+{
+    @Html.ActionLink(item.Name, "Index", item.ControllerName)
+}
