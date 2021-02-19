@@ -11,9 +11,10 @@ namespace SampleHelpers
 {
     public class CustomSqlConnection : ICustomConnection
     {
-       
+
         #region Properties
 
+        private List<SqlParameter> _cmd_parameters;
         private List<SqlParameter> _parameters;
 
         public List<SqlParameter> Parameters
@@ -36,6 +37,7 @@ namespace SampleHelpers
         public CustomSqlConnection()
         {
             _parameters = new List<SqlParameter>();
+            _cmd_parameters = new List<SqlParameter>();
         }
 
         public CustomSqlConnection(string name)
@@ -43,6 +45,7 @@ namespace SampleHelpers
             _conn = new SqlConnection();
             _conn.ConnectionString = name;
             _parameters = new List<SqlParameter>();
+            _cmd_parameters = new List<SqlParameter>();
         }
 
         #endregion
@@ -55,7 +58,7 @@ namespace SampleHelpers
             {
                 for (int i = 0; i < _parameters.Count; i++)
                 {
-                    cmd.Parameters.Add(_parameters[i]);
+                    _cmd_parameters.Add(cmd.Parameters.Add(_parameters[i]));
                 }
             }
         }
@@ -82,7 +85,10 @@ namespace SampleHelpers
         {
             SqlParameter param = new SqlParameter();
             param.ParameterName = name;
-            param.Size = size;
+            if (size > 0)
+            {
+                param.Size = size;
+            }
             param.SqlDbType = dbType;           
             param.Direction = paramDirection;
             if (value != null)
@@ -97,7 +103,10 @@ namespace SampleHelpers
         {
             SqlParameter param = new SqlParameter();
             param.ParameterName = name;
-            param.Size = size;
+            if (size > 0)
+            {
+                param.Size = size;
+            }
             param.DbType = dbType;
             param.Direction = paramDirection;
             if (value != null)
@@ -155,6 +164,7 @@ namespace SampleHelpers
                 PrepareCommand(ref cmd);
                 _conn.Open();
                 cmd.ExecuteNonQuery();
+                _conn.Close();
             }
             catch (Exception)
             {
@@ -163,6 +173,45 @@ namespace SampleHelpers
             }
         }
 
+        public IDataReader ExecuteDataSetCreateDataReader(string procedureName, CommandType cmdType)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(procedureName, _conn);
+                SqlDataAdapter da = new SqlDataAdapter();
+                cmd.CommandType = cmdType;
+                PrepareCommand(ref cmd);
+                da.SelectCommand = cmd;
+                _conn.Open();
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                _conn.Close();
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                        return ds.CreateDataReader();
+                    else
+                        return null;
+                }
+                else
+                    return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
+        public string GetParameterValue(string paramName)
+        {
+            object obj = _cmd_parameters.Where(p => p.ParameterName == paramName).FirstOrDefault().Value;
+            if (obj != null)
+                return obj.ToString();
+            else
+                return string.Empty;
+        }
         #endregion
     }
 }

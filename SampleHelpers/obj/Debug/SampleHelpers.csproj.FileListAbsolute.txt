@@ -5,3 +5,44 @@ C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleH
 C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojResolveAssemblyReference.cache
 C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
 C:\Users\santosh\Documents\Visual Studio 2015\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.dll
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.pdb
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.dll
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.pdb
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojResolveAssemblyReference.cache
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
+C:\Users\santosh\Desktop\Practice\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.dll
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.pdb
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.dll
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.pdb
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojAssemblyReference.cache
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csproj.CoreCompileInputs.cache
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csproj.CopyComplete
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
+C:\Users\santo\source\repos\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.dll
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.pdb
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.dll
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.pdb
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojResolveAssemblyReference.cache
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
+C:\Users\santosh\Desktop\Practice\New folder\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.dll
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.pdb
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.dll
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.pdb
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojAssemblyReference.cache
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csproj.CoreCompileInputs.cache
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csproj.CopyComplete
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
+C:\Users\santo\Desktop\New folder\SampleMVCTemplate\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.dll
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\SampleHelpers.pdb
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.dll
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\bin\Debug\Helpers.pdb
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csprojAssemblyReference.cache
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csproj.CoreCompileInputs.cache
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.csproj.CopyComplete
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.dll
+C:\Users\santo\Documents\Visual Studio 2019\Projects\SampleMVCTemplate\SampleHelpers\obj\Debug\SampleHelpers.pdb

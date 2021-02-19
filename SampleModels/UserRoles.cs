@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace SampleModels
 {
-   public class UserRoles
+    [Serializable]
+    public class UserRoles : ModelHelpers
     {
         [DatabaseColumnName(ColumnName = "user_role_id")]
         public string UserRoleId { get; set; }
@@ -18,16 +19,22 @@ namespace SampleModels
         [DatabaseColumnName(ColumnName = "role_id")]
         public string RoleId { get; set; }
 
-        public UserRoleMenuAction UserRoleMenuAction
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        private string _created_by;
 
-            set
-            {
-            }
+        [DatabaseColumnName(ColumnName = "created_by")]
+        public string CreatedBy
+        {
+            get { return _created_by; }
+            set { _created_by = value; }
         }
+
+        private DateTime _created_dt;
+
+        [DatabaseColumnName(ColumnName = "created_dt")]
+        public DateTime CreatedDate
+        {
+            get { return _created_dt; }
+            set { _created_dt = value; }
+        } 
     }
 }

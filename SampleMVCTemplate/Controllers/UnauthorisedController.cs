@@ -14,7 +14,6 @@ namespace SampleMVCTemplate.Controllers
         public ActionResult Index(string errorText)
         {
             ViewBag.ErrorText = errorText;
-            FormsAuthentication.SignOut();
             return View();
         }
     }

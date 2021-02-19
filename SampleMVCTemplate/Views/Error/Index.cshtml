@@ -1,1 +1,12 @@
 ﻿
+@if (ViewBag.HandleErrorInfo != null)
+{
+    <div class="alert alert-warning">
+        <h4>Error Occurred in controller:  @ViewBag.HandleErrorInfo.ControllerName</h4>
+    </div>
+    <div class="alert alert-danger">
+        <span class="label-info">Exception Details:</span>
+        <br />
+        @ViewBag.HandleErrorInfo.Exception
+    </div>
+} 

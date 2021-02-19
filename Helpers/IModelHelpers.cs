@@ -9,6 +9,7 @@ namespace Helpers
 {
     public interface IModelHelpers
     {
-        object Fill(IDataReader dr);        
+        object Fill(IDataReader dr);
+        string PropertyToString();
     }
 }

@@ -1,0 +1,25 @@
+﻿@model SampleModels.Roles
+
+<script type="text/javascript">     
+    pageName = "CreateUpdateDeleteSaveIndex";     
+</script>
+<script src="~/Scripts/ProjectScripts/Roles.js"></script>
+
+@using (Html.BeginForm("EditSave", "Roles", FormMethod.Post, new { @name = "frmRoleCUDOperation", @id = "frmRoleCUDOperation" }))
+{
+   
+
+<div class="form-horizontal">
+    <h4>Roles</h4>
+    <hr />
+    @Html.HiddenFor(model => model.RoleId)
+    @Html.HiddenFor(model => model.CUDOperationType)
+    <div id="divRoleCreateUpdateDeleteSaveView">
+
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

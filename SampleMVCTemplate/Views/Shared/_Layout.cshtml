@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using SampleMVCTemplate.Infrastructure
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,36 +8,70 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+    <script type="text/javascript">
+        var baseUrl = window.document.location.origin;
+        var AjaxSuccess = "SUCCESS";
+        var AjaxError = "ERROR";
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/helpers")
+    
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top bg-dark">
+        <div style="width:100%;">
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                      
+                    </td>
+                    <td class="text-right">
+                        @if (IsUserAuthenticated)
+                        {
+                            <span class="text-info">
+                                @Html.Label(GetUserName()) |
+                            </span>
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="divdialog"></div>
+    </div>
+    <div class="body-content" style="width:100%;margin-top:10px;">
+       
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 panel panel-default">
+                <div class="navbar-header">
+                    @Html.Partial("_Menu")
+                </div>
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10">
+                @Html.Partial("_Message")
+                @RenderBody()
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; 2018- Sample MVC Template</p>
+        </footer>
+    </div>
+        
     @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/Scripts/Session.js"></script>
+    <script>
+        function CreateTimeOut() {
+            timeOutInterval = setTimeout(function () {
+                ShowTimeOut();
+            }, (@SessionExpirationTime-showDialogBefore) * 60000);
+        }
+        $(document).ready(function () {
+            CreateTimeOutDialog();
+            CreateTimeOut();
+        });
+    </script>
 </body>
 </html>

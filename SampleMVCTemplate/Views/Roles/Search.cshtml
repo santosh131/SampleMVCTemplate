@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SampleModels.Roles>
+
+@{
+    Layout = null;
+}
+<table class="table table-striped table-bordered" id="tbRoleSearch">
+    <thead>
+        <tr>
+            <th>
+                <a href="#" data-sort-col-name="role_name_txt" data-sortable="true"> RoleName</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="active_desc" data-sortable="true"> Status</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="created_by" data-sortable="true"> CreatedBy</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="created_dt" data-sortable="true"> CreatedDate</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="updated_by" data-sortable="true"> UpdatedBy</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="updated_dt" data-sortable="true"> UpdatedDate</a>
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td nowrap>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td nowrap>
+                @Html.DisplayFor(modelItem => item.UpdatedDate)
+            </td>
+
+            <td style="white-space:nowrap">
+                @if (HasActionPermission("A00023"))
+                {
+                    @Html.CustomActionLink("Edit", "CreateUpdateDeleteSaveIndex", "Roles", "", new { RoleId = item.RoleId, CUDOperationType = Helpers.CommonEnums.UpdateOperationType }, null, "A00023")
+                }
+                else if (HasActionPermission("A00024"))
+                {
+                    @Html.CustomActionLink("Edit", "CreateUpdateDeleteSaveIndex", "Roles", "", new { RoleId = item.RoleId, CUDOperationType = Helpers.CommonEnums.ActivateInactivateOperationType }, null, "A00024")
+                }
+            </td>
+            <td style="white-space:nowrap">@Html.CustomActionLink("Menu", "Menu", "Roles", "", new { id = item.RoleId, menuId = "" }, null, "A00025")</td>
+        </tr>
+        }
+    </tbody>
+
+</table>

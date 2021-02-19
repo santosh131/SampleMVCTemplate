@@ -12,8 +12,9 @@ namespace SampleMVCTemplate.Infrastructure
         public string UserId { get; set; }
         public string UserName { get; set; }
         public string Roles { get; set; }
+        public List<RoleMenuActionViewModel> RoleMenuActions { get; set; }
         public List<Menus> Menus { get; set; }
-        public List<MenuActions> MenuActions { get; set; }
+        public List<MenuCategory> MenuCategories { get; set; }
 
         public CustomPrincipal(string userId, string userName)
         {
@@ -35,12 +36,34 @@ namespace SampleMVCTemplate.Infrastructure
 
         public bool HasControllerPermission(string controllerName)
         {
-            return this.Menus.Where(m=>m.ControllerName== controllerName).Count()>0?true:false;
+            if (this.Menus != null)
+                return this.Menus.Where(m => m.ControllerName == controllerName).Count() > 0 ? true : false;
+            else
+                return false;
+        }
+
+        public bool HasControllerActionPermission(string controllerName,string actionName)
+        {
+            if (this.RoleMenuActions != null)
+                return this.RoleMenuActions.Where(m => m.ControllerName == controllerName && m.MenuActionName ==actionName).Count() > 0 ? true : false;
+            else
+                return false;
         }
 
         public bool HasActionPermission(string menuActionCode)
         {
-            return this.MenuActions.Where(m => m.MenuActionCode == menuActionCode).Count() > 0 ? true : false;
+            if (this.RoleMenuActions != null)
+                return this.RoleMenuActions.Where(m => m.MenuActionCode == menuActionCode).Count() > 0 ? true : false;
+            else
+                return false;
+        }
+
+        public string GetActionDescription(string menuActionCode)
+        {
+            if (this.RoleMenuActions != null)
+                return this.RoleMenuActions.Where(m => m.MenuActionCode == menuActionCode).FirstOrDefault().ActionDescription;
+            else
+                return "";
         }
     }
 }

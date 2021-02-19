@@ -1,0 +1,54 @@
+﻿@model SampleModels.RoleMenuViewModel
+<table class="table table-striped table-bordered" id="tbRoleMenuAction">
+    <thead>
+        <tr>
+            <th></th>
+            <th style="white-space:nowrap;">
+                <a href="#" data-sort-col-name="action_desc_txt" data-sortable="false"> Action Description</a>
+            </th>
+            <th style="white-space:nowrap;">
+                <a href="#" data-sort-col-name="edit_locked_ind" data-sortable="false"> Locked</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.RoleMenuAction.Count() > 0)
+        {
+            for (int i = 0; i < Model.RoleMenuAction.Count(); i++)
+            {
+                <tr>
+                    <td align="center">
+                        @Html.HiddenFor(model => model.RoleMenuAction[i].MenuActionId)
+                        @if (Model.RoleMenuAction[i].EditLockedIndicator)
+                        {
+                            @Html.CheckBoxFor(model => model.RoleMenuAction[i].SelectedIndicator, new { @disabled = "disabled"})
+                       }
+                        else
+                        {
+                                @Html.CheckBoxFor(model => model.RoleMenuAction[i].SelectedIndicator)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.RoleMenuAction[i].ActionDescription)
+                    </td>
+                    <td align="center">
+                        @if (Model.RoleMenuAction[i].EditLockedIndicator)
+                        {
+                            @Html.CheckBoxFor(model => model.RoleMenuAction[i].EditLockedIndicator, new { @disabled = "disabled", @title = "This record cannot be modified , this is a System related action"})
+                        }
+                        else
+                        {
+                            @Html.CheckBoxFor(model => model.RoleMenuAction[i].EditLockedIndicator, new { @disabled = "disabled"})
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">        
+        @Html.CustomInputButton("btnMenuActionSave","Save", "button", new { @class = "btn btn-default" }, "A00025")
+    </div>
+</div>

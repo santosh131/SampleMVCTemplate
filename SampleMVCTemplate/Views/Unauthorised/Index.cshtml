@@ -1,10 +1,7 @@
-﻿@{
-    Layout = "~/Views/Shared/_LoginLayout.cshtml";
-}
-@if(!string.IsNullOrEmpty(ViewBag.ErrorText))
+﻿@if(!IsUserAuthenticated)
 {
-    <div class="alert-danger">
-        @ViewBag.ErrorText
-    </div>
+    @Html.ActionLink("Login", "Index", "Login")
 }
+
+
 

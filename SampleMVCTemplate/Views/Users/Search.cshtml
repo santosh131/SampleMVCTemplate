@@ -1,0 +1,92 @@
+﻿@model IEnumerable<SampleModels.UsersViewModel>
+@{
+    Layout = null;
+}
+<table class="table table-striped table-bordered" id="tbUserSearch">
+    <thead>
+        <tr>
+            <th>
+                <a href="#" data-sort-col-name="user_name_txt" data-sortable="true"> UserName</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="last_name_txt" data-sortable="true"> LastName</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="first_name_txt" data-sortable="true"> FirstName</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="role_name_txt" data-sortable="true"> Role</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="email_id_txt" data-sortable="true"> Email</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="active_desc" data-sortable="true"> Status</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="created_by" data-sortable="true"> CreatedBy</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="created_dt" data-sortable="true"> CreatedDate</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="updated_by" data-sortable="true"> UpdatedBy</a>
+            </th>
+            <th>
+                <a href="#" data-sort-col-name="updated_dt" data-sortable="true"> UpdatedDate</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td nowrap>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td nowrap>
+                @Html.DisplayFor(modelItem => item.UpdatedDate)
+            </td>
+            <td style="white-space:nowrap">
+                @if (HasActionPermission("A00013"))
+                {
+                    @Html.CustomActionLink("Edit", "CreateUpdateDeleteSaveIndex", "Users", "", new { UserId = item.UserId, CUDOperationType = Helpers.CommonEnums.UpdateOperationType }, null, "A00013")
+                }
+                else if (HasActionPermission("A00014"))
+                {
+                    @Html.CustomActionLink("Edit", "CreateUpdateDeleteSaveIndex", "Users", "", new { UserId = item.UserId, CUDOperationType = Helpers.CommonEnums.ActivateInactivateOperationType }, null, "A00014")
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+
+

@@ -8,16 +8,33 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using System.Text;
+using System.Reflection;
+using SampleMVCTemplate.Infrastructure;
+using System.Threading;
+using System.Web.Script.Serialization;
 
 namespace SampleMVCTemplate.Controllers
 {
     public class LoginController : Controller
     {
         [AllowAnonymous]
-        public ActionResult Index()
+        //public ActionResult Index(string message,Users u)
+        public ActionResult Index(string message)
         {
-            FormsAuthentication.SignOut();
-            return View();
+            Users u = new Users();
+            ViewBag.ErrorText = message;
+
+            if (SessionHelper.IsUserAuthenticated)
+            {
+                u = SessionHelper.LoginClearAll();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                u = SessionHelper.GetUserInfoFromCookie();
+            }
+            return View("Index", u);
         }
 
         [AllowAnonymous]
@@ -27,34 +44,30 @@ namespace SampleMVCTemplate.Controllers
         {
             string messageCode = string.Empty;
             string message = string.Empty;
-            string encPwd = SecurityHelper.Encrypt(users.Password);
-            Users u = new UserBO().GetUser(users.UserName, encPwd, out messageCode, out message);
-            if (messageCode == CommonEnums.MessageCodes.Success.ToString())
+            users.Password = SecurityHelpers.Encrypt(users.Password);
+            SessionHelper.Login(users, out messageCode, out message);
+            if (messageCode.ToUpper() == CommonEnums.MessageCodes.SUCCESS.ToString())
             {
-                FormsAuthenticationTicket fAuthTicket = new FormsAuthenticationTicket(1, u.UserId, DateTime.Now, DateTime.Now.AddMinutes(15), true, u.UserName, FormsAuthentication.FormsCookiePath);
-                string hash = FormsAuthentication.Encrypt(fAuthTicket);
-                HttpCookie hcookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);
-                if (fAuthTicket.IsPersistent)
-                    hcookie.Expires = fAuthTicket.Expiration;
-                Response.Cookies.Add(hcookie);
                 return new RedirectToRouteResult(
-                    new RouteValueDictionary(
-                       new
-                       {
-                           controller = "Home",
-                           action = "Index"
-                       }
-                        )
-                    );
+                          new RouteValueDictionary(
+                             new
+                             {
+                                 controller = "Home",
+                                 action = "Index"
+                             }
+                              )
+                          );
             }
-            return RedirectToAction("Index");
+            else
+            {
+                return RedirectToAction("Index", new { message = message, users = new Users() });
+            }
         }
 
         [AllowAnonymous]
-        [HttpPost]
         public ActionResult Logout(Users users, FormCollection collection)
         {
-            FormsAuthentication.SignOut();
+            SessionHelper.Logout();
             return RedirectToAction("Index");
         }
     }

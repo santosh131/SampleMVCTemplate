@@ -1,19 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SampleModels.MenuActions">
-    <Position X="3.5" Y="4.75" Width="2" />
+    <Position X="3.75" Y="5.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAABAQAAAAEAAAQAAA=</HashCode>
+      <HashCode>AAAgFQAAAAAAAAAAAAAAAAACAAAABAQAEgAAAAIQggE=</HashCode>
       <FileName>MenuActions.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="UserRoleMenuAction" />
+      <Property Name="RoleMenuAction" />
     </ShowAsAssociation>
   </Class>
   <Class Name="SampleModels.Menus">
     <Position X="0.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAABAAQQEAAAAAAQAA=</HashCode>
+      <HashCode>AAAgFAAAAAAAAAAAAAQAAAQAAABABAAQUkAAAAIAQgE=</HashCode>
       <FileName>Menus.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -22,16 +30,23 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SampleModels.RoleMenuAction">
-    <Position X="6.5" Y="3.25" Width="1.75" />
+    <Position X="6.75" Y="3" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAAABABAABAAAAAAAAAAAAAAAAAAAAAAAgAAAAAQAgE=</HashCode>
       <FileName>RoleMenuAction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SampleModels.RoleMenus">
-    <Position X="3.5" Y="3" Width="1.5" />
+    <Position X="3.25" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAQJAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABQJAAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAAAgE=</HashCode>
       <FileName>RoleMenus.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -40,8 +55,12 @@
   </Class>
   <Class Name="SampleModels.Roles">
     <Position X="0.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAgFAIAAAAAAAAAAAAAAAQAAAAAAAgAEgAAAAIAQgE=</HashCode>
       <FileName>Roles.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -50,16 +69,22 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SampleModels.UserRoleMenuAction">
-    <Position X="6.5" Y="1" Width="2" />
+    <Position X="7" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAgA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAAACAAAAAAAAAAAAAAAgAAAAAQAgE=</HashCode>
       <FileName>UserRoleMenuAction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SampleModels.UserRoles">
     <Position X="3.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAABAIAAAAAAAAAAAAAAAgAAAAAAAQAAgAAAAAAAgE=</HashCode>
       <FileName>UserRoles.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -70,9 +95,10 @@
     <Position X="0.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAgAAAAAAAgCCRAAAAAAAAA=</HashCode>
+      <HashCode>AAAgFAAAABAAAAAAAAAAAAgQAAAAAAgCGxAAAAIgAgE=</HashCode>
       <FileName>Users.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

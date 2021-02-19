@@ -1,12 +1,55 @@
 ﻿@using Microsoft.AspNet.Identity
 @using SampleModels
 @using SampleMVCTemplate.Infrastructure
-
 @{
-    List<Menus> menus =(User as CustomPrincipal).Menus;
+    List<RoleMenuActionViewModel> roleMenuActioVMs = GetRoleMenuActioVMs();
+    List<MenuCategory> catgs = GetMenuCategory();
 
 }
-@foreach (var item in menus)
-{
-    @Html.ActionLink(item.Name, "Index", item.ControllerName)
-}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse">
+        @*<ul class="navbar-nav mr-auto">*@
+            <ul class="nav flex-column">
+                @if (IsUserAuthenticated)
+            {
+                foreach (var itemCatg in catgs)
+                {
+                    var menuCatg = roleMenuActioVMs.Where(m => m.MenuCategoryId == itemCatg.MenuCategoryId).ToList();
+                    if (menuCatg != null)
+                    {
+                        if (menuCatg.Count() > 1)
+                        {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-item dropdown-toggle" href="#" id="@itemCatg.MenuCategoryId" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        @itemCatg.MenuCategoryName
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        @foreach (var item in menuCatg)
+                                        {
+                                            if (item.MenuIndicator)
+                                            {
+                                                @Html.ActionLink(item.MenuName, item.MenuActionName, item.ControllerName, new { isMenu =1 }, new { @class = "dropdown-item" })
+                                                @*<br />*@
+                                            }
+                                        }
+                                    </div>
+
+                                </li>
+                            }
+                            else if (menuCatg.Count() == 1)
+                            {
+                                var item = menuCatg[0];
+                                if (item.MenuIndicator)
+                                {
+                                <li class="nav-item">
+                                    @Html.ActionLink(item.MenuName, item.MenuActionName, item.ControllerName)
+                                </li>
+                                }
+                            }
+                        }
+                    }
+                }
+            </ul>
+    </div>
+</nav>

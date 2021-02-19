@@ -1,0 +1,46 @@
+﻿@model SampleModels.Roles
+
+@using SampleMVCTemplate.Infrastructure
+<script src="~/Scripts/ProjectScripts/Roles.js"></script>
+@using (Html.BeginForm(new { @name = "frmRole", @id = "frmRole" }))
+{
+    <div id="divSearchSection" style="width:100%" class="card">
+        <div class="card-title" id="btnExpcollapseRoleSearch" data-toggle="collapse" style="margin-bottom:0px;"
+             data-target="#collapseRoleSearch" aria-expanded="true" aria-controls="collapseRoleSearch">
+            <button class="btn" data-toggle="collapse" 
+                    data-target="#collapseRoleSearch" aria-expanded="true" aria-controls="collapseRoleSearch" onclick="return false;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i> &nbsp;Role Search Section
+            </button>
+        </div>
+        <div class="collapse show" id="collapseRoleSearch">
+            <table class="" style="width:100%; border:1px solid lightgray;">
+                <tr>
+                    <td>RoleName </td>
+                    <td>@Html.TextBox("RoleName", Model.RoleName) </td>
+                </tr>
+                <tr>
+                    <td>Status </td>
+                    <td>
+                        @Html.DropDownList("StatusCode", new SelectList(GetCommonDropdown("D1001", "-2"), "Code", "Description", Model.StatusCode), new { @autocomplete = "off" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.CustomButton("btnSearch", "Search", "button", null, true, "fa fa-search", "A00021")
+                        @Html.CustomButton("btnReset", "Reset", "button", null, true, "fa fa-eraser", "A00021")
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+<div id="divRoleSearch">
+
+
+</div>
+<ul id="RolePager" class="pagination-sm"></ul>
+<input type="hidden" value="" id="hdTotalPageCount" />
+<p>
+    @Html.CustomActionLink("Create", "CreateUpdateDeleteSaveIndex", "Roles", "", new { RoleId = "", CUDOperationType = Helpers.CommonEnums.CreateOperationType }, null, "A00022")
+</p>
+ 

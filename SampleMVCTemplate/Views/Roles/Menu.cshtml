@@ -1,0 +1,36 @@
+﻿@model SampleModels.RoleMenuViewModel
+<script src="~/Scripts/ProjectScripts/RoleMenus.js"></script>
+<div class="form-horizontal">
+    <h4>Menus</h4>
+    <hr />
+    @using (Html.BeginForm("MenuActionsSave", "Roles", FormMethod.Post, new { @name="frmMenuAction" , @id= "frmMenuAction"}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => model.RoleId)
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="MenuId">Role Menus</label>
+                @Html.DropDownList("MenuId", new SelectList(ViewBag.Menus, "Code", "Description", Model.MenuId), new { @class = "form-control", @autocomplete = "off" })
+            </div>
+            <div class="col-md-6 mb-3">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="MenuId">Menu Actions</label>
+                <div id="divRoleMenuAction">
+
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

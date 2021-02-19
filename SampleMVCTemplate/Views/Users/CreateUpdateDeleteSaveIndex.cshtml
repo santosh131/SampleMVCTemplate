@@ -1,0 +1,25 @@
+﻿@model SampleModels.UsersViewModel
+<script type="text/javascript">
+
+    pageName = "CreateUpdateDeleteSaveIndex";
+</script>
+<script src="~/Scripts/ProjectScripts/Users.js"></script>
+
+@using (Html.BeginForm("EditSave", "Users", FormMethod.Post, new { @name = "frmUserCUDOperation", @id = "frmUserCUDOperation" }))
+{
+
+
+    <div class="form-horizontal">
+        <h4>Users</h4>
+        <hr />
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.CUDOperationType)
+        <div id="divUserCreateUpdateDeleteSaveView">
+
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

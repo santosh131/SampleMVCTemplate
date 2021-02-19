@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Helpers;
 using SampleHelpers;
+using System.Configuration;
 
 namespace SampleDAL
 {
@@ -20,9 +21,10 @@ namespace SampleDAL
 
         public DataAccessObject()
         {
+            string connString = ConfigurationSettings.AppSettings["DefaultConnection"].ToString();
             IConnectionFactory cf = new CustomConnectionFactory();
             _customConnection = cf.GetConnection(CommonEnums.DataBases.Sql);
-            _customConnection.SetConnectionObject(ConnectionName);
+            _customConnection.SetConnectionObject(connString);
         }
     }
 }

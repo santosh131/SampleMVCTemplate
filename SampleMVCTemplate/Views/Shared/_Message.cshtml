@@ -1,0 +1,69 @@
+﻿<div>
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorText))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                    @ViewBag.ErrorText
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @if (!string.IsNullOrEmpty(ViewBag.SuccessText))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    @ViewBag.SuccessText
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @if (!string.IsNullOrEmpty(TempData["SuccessText"] as string))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    @TempData["SuccessText"]
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    @if (!string.IsNullOrEmpty(TempData["ErrorText"] as string))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    @TempData["ErrorText"]
+                </div>
+            </div>
+        </div>
+    }
+   
+</div>
+<div id="divErrorMessage" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger" id="divErrorMessageText">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="divSuccessMessage" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" id="divSuccessMessageText">
+
+            </div>
+        </div>
+    </div>
+</div>
+

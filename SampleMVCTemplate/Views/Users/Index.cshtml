@@ -1,0 +1,56 @@
+﻿@model SampleModels.UsersViewModel
+@using SampleMVCTemplate.Infrastructure
+<script src="~/Scripts/ProjectScripts/Users.js"></script>
+@using (Html.BeginForm(new { @name = "frmUser", @id = "frmUser" }))
+{
+    <div id="divSearchSection" style="width:100%" class="card">
+        <div class="card-title" id="btnExpcollapseUserSearch" data-toggle="collapse" style="margin-bottom:0px;"
+             data-target="#collapseUserSearch" aria-expanded="true" aria-controls="collapseUserSearch">
+            <button class="btn" data-toggle="collapse"
+                    data-target="#collapseUserSearch" aria-expanded="true" aria-controls="collapseUserSearch" onclick="return false;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i> &nbsp;User Search Section
+            </button>
+        </div>
+        <div class="collapse show" id="collapseUserSearch">
+            <table class="" style="width:100%; border:1px solid lightgray;">
+                <tr>
+                    <td>UserName </td>
+                    <td>@Html.TextBox("UserName", Model.UserName) </td>
+                </tr>
+                <tr>
+                    <td>LastName </td>
+                    <td>@Html.TextBox("LastName", Model.LastName) </td>
+                </tr>
+                <tr>
+                    <td>FirstName </td>
+                    <td>@Html.TextBox("FirstName", Model.FirstName) </td>
+                </tr>
+                <tr>
+                    <td>Role </td>
+                    <td>@Html.DropDownList("RoleId", new SelectList(ViewBag.Roles, "Code", "Description", Model.RoleId)) </td>
+                </tr>
+                <tr>
+                    <td>Status </td>
+                    <td>
+                        @Html.DropDownList("StatusCode", new SelectList(GetCommonDropdown("D1001", "-2"), "Code", "Description", Model.StatusCode), new { @autocomplete = "off" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.CustomButton("btnSearch", "Search", "button", null, true, "fa fa-search", "A00011")
+                        @Html.CustomButton("btnReset", "Reset", "button", null, true, "fa fa-eraser", "A00011")
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+<div id="divUserSearch">
+
+
+</div>
+<ul id="UserPager" class="pagination-sm"></ul>
+<input type="hidden" value="" id="hdTotalPageCount" />
+<p>
+    @Html.CustomActionLink("Create", "CreateUpdateDeleteSaveIndex", "Users", "", new { UserId = "", CUDOperationType = Helpers.CommonEnums.CreateOperationType }, null, "A00012")
+</p>

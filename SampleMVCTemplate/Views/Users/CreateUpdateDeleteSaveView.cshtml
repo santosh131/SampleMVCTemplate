@@ -1,0 +1,241 @@
+﻿@model SampleModels.UsersViewModel
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+@Html.HiddenFor(model => model.UserId)
+@Html.HiddenFor(model => model.ActiveIndicator)
+
+
+@if (Model.CUDOperationType == Helpers.CommonEnums.ActivateInactivateOperationType ||
+       Model.CUDOperationType == Helpers.CommonEnums.DeleteOperationType)
+{
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="UserName">User Name</label>
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="FirstName">First Name</label>
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="LastName">Last Name</label>
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="RoleId">Role</label>
+            @Html.DropDownList("RoleId", new SelectList(ViewBag.Roles, "Code", "Description", Model.RoleId), new { @class = "form-control", @disabled = "disabled", @autocomplete = "off" })
+            @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="Email">Email</label>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Mobile">Mobile</label>
+            @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="Address1">Address1</label>
+            @Html.EditorFor(model => model.Address1, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Address2">Address2</label>
+            @Html.EditorFor(model => model.Address2, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.Address2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="StateCode">StateCode</label>
+            @Html.DropDownList("StateCode", new SelectList(GetCommonDropdown("D1002", "-1"), "Code", "Description", Model.StateCode), new { @class = "form-control", @disabled = "disabled", @autocomplete = "off" })
+            @Html.ValidationMessageFor(model => model.StateCode, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="City">City</label>
+            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ZipCode">ZipCode</label>
+            @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Password">Password</label>
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control make-pass", @disabled = "disabled" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+}
+else
+{
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="UserName">User Name</label>
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="FirstName">First Name</label>
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="LastName">Last Name</label>
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="RoleId">Role</label>
+            @Html.DropDownList("RoleId", new SelectList(ViewBag.Roles, "Code", "Description", Model.RoleId), new { @class = "form-control", @autocomplete = "off" })
+            @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="Email">Email</label>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Mobile">Mobile</label>
+            @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="Address1">Address1</label>
+            @Html.EditorFor(model => model.Address1, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Address2">Address2</label>
+            @Html.EditorFor(model => model.Address2, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Address2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="StateCode">StateCode</label>
+            @Html.DropDownList("StateCode", new SelectList(GetCommonDropdown("D1002", "-1"), "Code", "Description", Model.StateCode), new { @class = "form-control", @autocomplete = "off" })
+            @Html.ValidationMessageFor(model => model.StateCode, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="City">City</label>
+            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ZipCode">ZipCode</label>
+            @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Password">Password</label>
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control make-pass" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+
+@if (Model.CUDOperationType != Helpers.CommonEnums.CreateOperationType)
+{
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="CreatedBy">CreatedBy</label>
+            @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="CreatedDate">CreatedDate</label>
+            @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="UpdatedBy">UpdatedBy</label>
+            @Html.EditorFor(model => model.UpdatedBy, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="UpdatedDate">UpdatedDate</label>
+            @Html.EditorFor(model => model.UpdatedDate, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.UpdatedDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="StatusDesc">Status</label>
+            @Html.DisplayFor(model => model.StatusDesc)
+            @Html.ValidationMessageFor(model => model.StatusDesc, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6 mb-3">
+
+        </div>
+    </div>
+}
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @if (Model.CUDOperationType == Helpers.CommonEnums.CreateOperationType)
+        {
+            @Html.CustomInputButton("btnUserCreateSave", "Save", "button", new { @class = "btn btn-default" }, "A00012")            
+        }
+
+        else
+        {
+            @Html.CustomInputButton("btnUserEditSave", "Save", "button", new { @class = "btn btn-default" }, "A00013")
+            if (Model.ActiveIndicator)
+            {
+                @Html.CustomInputButton("btnUserEditActivateInactivate", "Inactivate", "button", new { @class = "btn btn-default" }, "A00014")
+            }
+            else
+            {
+                @Html.CustomInputButton("btnUserEditActivateInactivate", "Activate", "button", new { @class = "btn btn-default" }, "A00014")
+            }
+        }
+    </div>
+</div>

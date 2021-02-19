@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -15,3 +15,57 @@ select,
 textarea {
     max-width: 280px;
 }
+
+    button, input[type="button"], input[type="submit"] {
+        background-color: navy;
+        color: orange;
+        height: 35px;
+        border-radius: 10px;
+        border: 1px solid orange;
+        min-width: 120px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    .card-title{
+        background-color:navy;
+        color:orange;
+        font-weight:bold;
+    }
+table.dataTable thead th,
+table.dataTable thead td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #111;
+}
+
+table.dataTable tbody td {
+    padding: 5px 10px;
+    font-size:small;
+}
+
+div.dataTables_scroll{
+    border:1px solid lightgray;
+    
+} 
+
+.btn{
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+}
+p{
+    margin-bottom:0px;
+}
+
+.pagination-sm {
+    display: inline-block;
+    margin-bottom: 1.75em;
+}
+
+    .pagination-sm li {
+        display: inline-block;
+    }
+    label{
+        font-weight:700;
+    }
